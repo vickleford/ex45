@@ -63,10 +63,18 @@ class StartAdventure(Room):
         self.treasures = []
         
     def run(self):
-        next = self.get_action('Do you have any questions for Gitzold?')
-        if 'run away' in next:
-            print "you run away like a sissy"
-            exit(-1)
+        next = self.get_action('Do you have any questions for Gitzold?\n> ')
+        
+        if 'yes' in next:
+            print 'Gitzold lowers his gaze and looks at you over his glasses\n"Yes? What is your question?"'
+            next = self.get_action('Gitzold is expecting a question\n> ')
+            
+        if 'how many trolls' in next:
+            print 'Gitzold sighs and says, "I don\'t know, there must be at least ten."'
+        elif 'when' in next and 'start' in next:
+            print 'Gitzold grins and sends you on your way'
+        else: 
+            print 'Gitzold nods and sends you on your way'
             
 class TowerLevelOne(object):
     '''
