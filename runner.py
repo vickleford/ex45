@@ -4,6 +4,7 @@ import sys
 # better way of doing this?
 import rooms
 from rooms import StartAdventure
+from rooms import TowerEntrance
 from rooms import TowerLevelOne
 from rooms import TowerLevelTwo
 from rooms import TowerLevelThree
@@ -13,8 +14,7 @@ from rooms import TowerLevelFive
 class DungeonRunner(object):
     '''Run the dungeon.
     
-    Go through it room by room and make sure the hero dies where...
-    Erm, make sure the hero saves the day without dying!
+    Go through it room by room and make sure the hero doesn't die!
     '''
     
     def __init__(self, run_room):
@@ -34,7 +34,3 @@ class DungeonRunner(object):
             self.run_room = current_room.run()
             if self.run_room == '':
                 exit(0)
-        
-    def death(self):
-        '''You're dead.'''
-        pass

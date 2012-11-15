@@ -35,4 +35,4 @@ class StartAdventure(Room):
         else: 
             print 'Gitzold nods and sends you on your way'
 
-        return 'TowerLevelOne'
+        return 'TowerEntrance'
